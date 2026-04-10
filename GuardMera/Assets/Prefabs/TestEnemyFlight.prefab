@@ -88,10 +88,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6756779743153573436}
   - component: {fileID: 8680134959397875053}
-  - component: {fileID: -2650710810165632663}
   m_Layer: 0
   m_Name: TestEnemyFlight
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,18 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   changeDirThreshold: 0.6
   speed: 15
---- !u!114 &-2650710810165632663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2989894547405928771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a560fe031ec4aa4f8d1dc657c72feda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
 --- !u!1 &7158795693211765816
 GameObject:
   m_ObjectHideFlags: 0
