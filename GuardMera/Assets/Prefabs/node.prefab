@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8821292186083919742}
   - component: {fileID: 7034471096906582125}
   - component: {fileID: 7469027951268456228}
+  - component: {fileID: 7243323384574344667}
   m_Layer: 0
   m_Name: node
   m_TagString: Untagged
@@ -76,8 +77,8 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
-  m_AutoTiling: 1
-  m_Size: {x: 1, y: 1}
+  m_AutoTiling: 0
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!212 &7469027951268456228
 SpriteRenderer:
@@ -138,3 +139,15 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &7243323384574344667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368718761009242988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137362b18d598a542acc96e749edf638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NodeBehaviour
