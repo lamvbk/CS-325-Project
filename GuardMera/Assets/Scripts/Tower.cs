@@ -14,7 +14,7 @@ public class Tower : MonoBehaviour
     [Header("Bullet Tower(s) (default) Specs")]
     public float fireRate = 1f;
     public float fireCD = 0f;
-    public GameObject bulletPf;
+    public GameObject projectilePf;
 
     [Header("Melee Specific Specs")]
     public bool isMelee;
@@ -65,15 +65,32 @@ public class Tower : MonoBehaviour
         if(target != null)
         {
             LockOn();
+            if(fireCD <= 0f)
+            {
+                Debug.Log("We got here!");
+                Shoot();
+                fireCD = 1f / fireRate;
+            }
+
+            fireCD -= Time.deltaTime;
         }
     }
 
     void LockOn()
     {
         Vector2 dir = target.position - transform.position;
-        //Quaternion lookRotation = Quaternion.LookRotation(dir);
-        //Vector3 rotation = Quaternion.Lerp(this.transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         this.transform.right = dir;
+    }
+
+    void Shoot()
+    {
+        GameObject projectileObject = (GameObject)Instantiate(projectilePf, firePoint.position, firePoint.rotation);
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
+
+        if(projectile != null)
+        {
+            projectile.Seek(target);
+        }
     }
 
     void OnDrawGizmos()

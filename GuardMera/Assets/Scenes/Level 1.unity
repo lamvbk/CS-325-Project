@@ -9012,7 +9012,7 @@ MonoBehaviour:
     timeBetweenGroups: 1
   spawnPoint: {fileID: 1310248412}
   timeBetweenWaves: 5
-  countDown: 1
+  countDown: 0.5
   spawnTiming: 1
 --- !u!1001 &1576158650
 PrefabInstance:
@@ -11608,17 +11608,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4797751251059157224, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
+      propertyPath: fireRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797751251059157224, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
+      propertyPath: projectilePf
+      value: 
+      objectReference: {fileID: 4249330161930501391, guid: 02aed752110b4e746bc1ff2d926d51e8, type: 3}
     - target: {fileID: 6167065515448147938, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
     - target: {fileID: 6229531503939852681, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.21
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 6229531503939852681, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.18
+      value: 8.69
       objectReference: {fileID: 0}
     - target: {fileID: 6229531503939852681, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
       propertyPath: m_LocalPosition.z
