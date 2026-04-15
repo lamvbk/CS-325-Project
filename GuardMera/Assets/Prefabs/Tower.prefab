@@ -138,10 +138,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
   target: {fileID: 0}
-  range: 15
-  fireRate: 1
+  range: 10
+  fireRate: 3
   fireCD: 0
-  projectilePf: {fileID: 0}
+  projectilePf: {fileID: 4249330161930501391, guid: 02aed752110b4e746bc1ff2d926d51e8, type: 3}
   isMelee: 0
   meleePf: {fileID: 0}
   turnSpeed: 20

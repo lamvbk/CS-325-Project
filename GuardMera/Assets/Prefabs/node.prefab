@@ -151,3 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137362b18d598a542acc96e749edf638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NodeBehaviour
+  Tower: {fileID: 6167065515448147938, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}

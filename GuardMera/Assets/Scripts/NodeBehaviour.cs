@@ -5,6 +5,10 @@ public class NodeBehaviour : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color orig_color;
 
+    private bool hasTower = false;
+
+    public GameObject Tower;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -18,8 +22,10 @@ public class NodeBehaviour : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (!hasTower && Input.GetMouseButtonDown(0))
         {
+            Instantiate(Tower, transform.position, Quaternion.identity);
+            hasTower = true;
             Debug.Log("turret placed");
 
         }
