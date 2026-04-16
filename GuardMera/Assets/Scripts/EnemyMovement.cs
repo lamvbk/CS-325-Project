@@ -44,6 +44,7 @@ public class EnemyMovement : MonoBehaviour
 
     void PathEnd()
     {
+        GameMaster.instance.TakeDamage(50);
         Destroy(gameObject);
     }
 }

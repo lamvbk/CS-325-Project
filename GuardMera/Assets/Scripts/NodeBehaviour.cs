@@ -16,19 +16,19 @@ public class NodeBehaviour : MonoBehaviour
     }
     void OnMouseOver()
     {
-        if (spriteRenderer.color != Color.red)
+        if (!hasTower && GameMaster.instance.CanBuild())
         {
             spriteRenderer.color = Color.red;
+            if (!hasTower && Input.GetMouseButtonDown(0))
+            {
+                Instantiate(GameMaster.instance.selectedTowerPrefab, transform.position, Quaternion.identity);
+                hasTower = true;
+                Debug.Log("turret placed");
+                GameMaster.instance.SpendMoney(GameMaster.instance.selectedTowerCost);
+            }
 
         }
 
-        if (!hasTower && Input.GetMouseButtonDown(0))
-        {
-            Instantiate(Tower, transform.position, Quaternion.identity);
-            hasTower = true;
-            Debug.Log("turret placed");
-
-        }
         
     }
 
