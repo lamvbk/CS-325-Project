@@ -5,8 +5,8 @@ public class Enemy : MonoBehaviour
 
     public int maxHealth = 150;
 
-    [SerializeField]
-    private float currentHealth;
+    [HideInInspector]
+    public float currentHealth;
     [SerializeField]
     private float currentHealthDecimal;
     [SerializeField]
@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private SpriteRenderer sR;
 
-    void Start()
+    void Awake() // used to be Start()
     {
         sR = this.GetComponentInChildren<SpriteRenderer>();
         currentHealth = maxHealth;
