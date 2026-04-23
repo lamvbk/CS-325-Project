@@ -28,6 +28,24 @@ public class NodeBehaviour : MonoBehaviour
             }
 
         }
+        else if (hasTower)
+        {
+            spriteRenderer.color = Color.green;
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (GameMaster.instance.selectedNode == this.gameObject)
+                {
+                    GameMaster.instance.ReturnToShop();
+                    spriteRenderer.color = orig_color;
+
+                }
+                else
+                {
+                    GameMaster.instance.SelectNode(this.gameObject);
+                    spriteRenderer.color = Color.yellow;
+                }
+            }
+        }
 
         
     }

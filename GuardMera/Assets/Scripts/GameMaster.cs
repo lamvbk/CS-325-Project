@@ -67,10 +67,19 @@ public class GameMaster : MonoBehaviour
 
     public void SelectNode( GameObject node)
     {
+        selectedTowerPrefab = null;
+        selectedTowerCost = 0;
         selectedNode = node;
         shopMenu.SetActive(false);
         fuseMenu.SetActive(true);
         Debug.Log("menu swapped");
+    }
+
+    public void ReturnToShop()
+    {
+        selectedNode = null;
+        fuseMenu.SetActive(false);
+        shopMenu.SetActive(true);
     }
 
     public void death()
