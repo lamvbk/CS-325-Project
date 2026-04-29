@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9003321915398232202}
   - component: {fileID: 1116133239849431812}
+  - component: {fileID: 154971561161412832}
   m_Layer: 3
   m_Name: GFX
   m_TagString: Untagged
@@ -91,6 +92,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &154971561161412832
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118247524017067434}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6167065515448147938
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tower
   target: {fileID: 0}
   range: 10
+  animator: {fileID: 154971561161412832}
   fireRate: 3
   fireCD: 0
   projectilePf: {fileID: 4249330161930501391, guid: 02aed752110b4e746bc1ff2d926d51e8, type: 3}
@@ -147,6 +171,8 @@ MonoBehaviour:
   turnSpeed: 20
   enemyTag: Enemy
   firePoint: {fileID: 3004131963412344683}
+  bulletCount: 1
+  spreadAngle: 0
 --- !u!1 &7487205910034159719
 GameObject:
   m_ObjectHideFlags: 0
