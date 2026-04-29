@@ -127,6 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   changeDirThreshold: 0.8
   speed: 20
+  baseSpeed: 20
+  slowTimer: 0
+  damage: 8
 --- !u!114 &-7564140458035484413
 MonoBehaviour:
   m_ObjectHideFlags: 0

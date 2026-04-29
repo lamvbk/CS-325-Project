@@ -14,6 +14,11 @@ public class EnemyMovement : MonoBehaviour
     [Header("Test Values")]
     public float speed = 10f;
 
+    public float baseSpeed = 10f;
+    public float slowTimer = 0f;
+
+    public int damage = 50;
+
     void Start()
     {
         target = Waypoints.points[0];
@@ -22,6 +27,16 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (slowTimer > 0f)
+        {
+            slowTimer -= Time.deltaTime;
+            if(slowTimer <= 0)
+            {
+                speed = baseSpeed;
+                Debug.Log("Speed is back up to normal!");
+            }
+        }
+
         Vector2 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
         if(Vector2.Distance(transform.position, target.position) <= changeDirThreshold)
@@ -44,7 +59,13 @@ public class EnemyMovement : MonoBehaviour
 
     void PathEnd()
     {
-        GameMaster.instance.TakeDamage(50);
+        GameMaster.instance.TakeDamage(damage);
         Destroy(gameObject);
+    }
+
+    public void ApplySlow(float slowPercent, float duration)
+    {
+        speed = baseSpeed * (1f - slowPercent);
+        slowTimer = duration;
     }
 }

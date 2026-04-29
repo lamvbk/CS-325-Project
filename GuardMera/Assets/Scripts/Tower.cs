@@ -27,6 +27,11 @@ public class Tower : MonoBehaviour
     public string enemyTag = "Enemy";
     public Transform firePoint;
 
+    [Header("Upgrade Specific Specs")]
+
+    public int bulletCount = 1;
+    public float spreadAngle = 0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -87,13 +92,21 @@ public class Tower : MonoBehaviour
 
     void Shoot()
     {
-        GameObject projectileObject = (GameObject)Instantiate(projectilePf, firePoint.position, firePoint.rotation);
-        Projectile projectile = projectileObject.GetComponent<Projectile>();
+        float startAngle = -spreadAngle / 2f;
+        float angleStep = (bulletCount > 1) ? (spreadAngle / (bulletCount - 1)) : 0;
         animator.SetBool("IsShoot", true);
 
-        if(projectile != null)
+        for (int i = 0; i < bulletCount; i++)
         {
-            projectile.Seek(target);
+            float currentAngle = startAngle + (i * angleStep);
+            GameObject projectileObject = (GameObject)Instantiate(projectilePf, firePoint.position, firePoint.rotation);
+            projectileObject.transform.Rotate(0,0,currentAngle);
+            Projectile projectile = projectileObject.GetComponent<Projectile>();
+            
+            if(projectile != null)
+            {
+                projectile.Seek(target);
+            }
         }
     }
 

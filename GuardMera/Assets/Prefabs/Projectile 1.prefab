@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5808609958559778688}
   - component: {fileID: 2161110015549442222}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa31947245825764da8d19fa818e2ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  isHoming: 1
+  isHoming: 0
   speed: 75
   lifeSpan: 5
   damage: 50
