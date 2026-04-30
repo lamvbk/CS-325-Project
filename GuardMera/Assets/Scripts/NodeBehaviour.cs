@@ -5,9 +5,9 @@ public class NodeBehaviour : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color orig_color;
 
-    private bool hasTower = false;
+    public bool hasTower = false;
 
-    public GameObject Tower;
+    public GameObject itower;
 
     public float hoverTransparency = 0.4f;
 
@@ -26,7 +26,7 @@ public class NodeBehaviour : MonoBehaviour
             spriteRenderer.color = new Color(1f,0f,0f, hoverTransparency);
             if (!hasTower && Input.GetMouseButtonDown(0))
             {
-                Instantiate(GameMaster.instance.selectedTowerPrefab, transform.position, Quaternion.Euler(0, 0, -90f));
+                itower = Instantiate(GameMaster.instance.selectedTowerPrefab, transform.position, Quaternion.Euler(0,0,-90f));
                 hasTower = true;
                 GameMaster.instance.SpendMoney(GameMaster.instance.selectedTowerCost);
                 spriteRenderer.color = new Color(0,0,0,0);
@@ -60,6 +60,16 @@ public class NodeBehaviour : MonoBehaviour
         Color exitColor = orig_color;
         exitColor.a = 0f;
         spriteRenderer.color = exitColor;
+    }
+
+    public void RemoveTower()
+    {
+        if(itower != null)
+        {
+            Destroy(itower);
+        }
+        hasTower = false;
+        itower = null;
     }
 
 

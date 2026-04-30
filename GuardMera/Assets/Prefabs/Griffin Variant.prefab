@@ -29,9 +29,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9064479096349483330}
     - target: {fileID: 4797751251059157224, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
+      propertyPath: bulletCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797751251059157224, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
+      propertyPath: spreadAngle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797751251059157224, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
       propertyPath: projectilePf
       value: 
-      objectReference: {fileID: 4249330161930501391, guid: 02aed752110b4e746bc1ff2d926d51e8, type: 3}
+      objectReference: {fileID: 4249330161930501391, guid: b37f5649c4db44595b47cad6065b241e, type: 3}
     - target: {fileID: 6167065515448147938, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
       propertyPath: m_Name
       value: Griffin Variant

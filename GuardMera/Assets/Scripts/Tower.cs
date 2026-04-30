@@ -29,6 +29,8 @@ public class Tower : MonoBehaviour
 
     [Header("Upgrade Specific Specs")]
 
+    public string tname = "";
+
     public int bulletCount = 1;
     public float spreadAngle = 0f;
 
@@ -75,7 +77,6 @@ public class Tower : MonoBehaviour
             LockOn();
             if(fireCD <= 0f)
             {
-                Debug.Log("We got here!");
                 Shoot();
                 fireCD = 1f / fireRate;
             }

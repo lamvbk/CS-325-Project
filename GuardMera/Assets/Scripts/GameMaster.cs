@@ -18,6 +18,10 @@ public class GameMaster : MonoBehaviour
 //THIS IS FOR FUSING AND TOWER SELECTION FOR THE FUSE MENU
     public GameObject fuseMenu;
     public GameObject selectedNode;
+
+    public FuseMenu fuseMenuScript;
+
+    public GameObject hydraPrefab;
     
 
     void Awake()
@@ -70,9 +74,11 @@ public class GameMaster : MonoBehaviour
         selectedTowerPrefab = null;
         selectedTowerCost = 0;
         selectedNode = node;
+        NodeBehaviour nb = node.GetComponent<NodeBehaviour>();
+        string tName = nb.itower.GetComponent<Tower>().tname;
         shopMenu.SetActive(false);
         fuseMenu.SetActive(true);
-        Debug.Log("menu swapped");
+        fuseMenuScript.SetupMenu(tName);
     }
 
     public void ReturnToShop()
@@ -82,8 +88,35 @@ public class GameMaster : MonoBehaviour
         shopMenu.SetActive(true);
     }
 
+
+
     public void death()
     {
         Debug.Log("YOU DIED");
+    }
+
+    public void CombineTower(string baseName, string addition)
+    {
+        string recipe = baseName + "_" + addition;
+        GameObject finalPrefab = null;
+
+        if (recipe == "Snake_Snake") finalPrefab = hydraPrefab;
+
+        if (finalPrefab != null)
+        {
+            NodeBehaviour nb = selectedNode.GetComponent<NodeBehaviour>();
+            nb.RemoveTower(); 
+            
+            // Spawn New
+            GameObject newTower = Instantiate(finalPrefab, selectedNode.transform.position, Quaternion.Euler(0, 0, -90f));
+            nb.itower = newTower;
+            nb.hasTower = true;
+
+            ReturnToShop();
+        }
+        else
+        {
+            Debug.Log("Invalid Recipe!");
+        }
     }
 }

@@ -171,6 +171,7 @@ MonoBehaviour:
   turnSpeed: 20
   enemyTag: Enemy
   firePoint: {fileID: 3004131963412344683}
+  tname: Bird
   bulletCount: 1
   spreadAngle: 0
 --- !u!1 &7487205910034159719
