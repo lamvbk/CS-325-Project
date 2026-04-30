@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    [Header("Targeting Specific")]
     [SerializeField]
     private Transform target;
     private Enemy targetEnemy;
@@ -65,6 +66,16 @@ public class Tower : MonoBehaviour
         if(target != null)
         {
             LockOn();
+<<<<<<< Updated upstream
+=======
+            if(fireCD <= 0f)
+            {
+                Shoot();
+                fireCD = 1f / fireRate;
+            }
+
+            fireCD -= Time.deltaTime;
+>>>>>>> Stashed changes
         }
     }
 
@@ -76,6 +87,42 @@ public class Tower : MonoBehaviour
         this.transform.right = dir;
     }
 
+<<<<<<< Updated upstream
+=======
+    void Shoot()
+    {
+        float startAngle = -spreadAngle / 2f;
+        float angleStep = (bulletCount > 1) ? (spreadAngle / (bulletCount - 1)) : 0;
+
+        if(!isMelee)
+        {    
+            for (int i = 0; i < bulletCount; i++)
+            {
+                float currentAngle = startAngle + (i * angleStep);
+                GameObject projectileObject = (GameObject)Instantiate(projectilePf, firePoint.position, firePoint.rotation);
+                projectileObject.transform.Rotate(0,0,currentAngle);
+                Projectile projectile = projectileObject.GetComponent<Projectile>();
+                
+                if(projectile != null)
+                {
+                    projectile.Seek(target);
+                }
+            }
+        }
+        else
+        {
+            GameObject meleeObject = (GameObject)Instantiate(meleePf, target.position, target.rotation);
+            Projectile projectile = meleeObject.GetComponent<Projectile>();
+
+            if(projectile != null)
+            {
+                Debug.Log("Calling melee script");
+                projectile.Melee(target);
+            }
+        }
+    }
+
+>>>>>>> Stashed changes
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

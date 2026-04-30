@@ -143,5 +143,43 @@ MonoBehaviour:
   isMelee: 0
   meleePf: {fileID: 0}
   turnSpeed: 20
+<<<<<<< Updated upstream:GuardMera/Assets/Prefabs/Tower.prefab
   enemyTag: Enemy
   firePoint: {fileID: 0}
+=======
+  enemyTag: GroundEnemy
+  firePoint: {fileID: 3004131963412344683}
+  bulletCount: 1
+  spreadAngle: 0
+--- !u!1 &7487205910034159719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3004131963412344683}
+  m_Layer: 3
+  m_Name: firePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3004131963412344683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7487205910034159719}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.33, y: 0, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6229531503939852681}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes:GuardMera/Assets/Prefabs/Towers/Tower.prefab
