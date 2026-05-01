@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - GroundEnemy
+  - FlyingEnemy
   - Enemy
   layers:
   - Default
