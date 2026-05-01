@@ -9,12 +9,14 @@ public class Tower : MonoBehaviour
     [Header("General")]
     public float range = 15f;
 
+    public Animator animator;
+
     //Targeting Specifics Maybe
 
     [Header("Bullet Tower(s) (default) Specs")]
     public float fireRate = 1f;
     public float fireCD = 0f;
-    public GameObject bulletPf;
+    public GameObject projectilePf;
 
     [Header("Melee Specific Specs")]
     public bool isMelee;
@@ -24,6 +26,13 @@ public class Tower : MonoBehaviour
     public float turnSpeed = 10f;
     public string enemyTag = "Enemy";
     public Transform firePoint;
+
+    [Header("Upgrade Specific Specs")]
+
+    public string tname = "";
+
+    public int bulletCount = 1;
+    public float spreadAngle = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,6 +63,7 @@ public class Tower : MonoBehaviour
             }
             else
             {
+                animator.SetBool("IsShoot", false);
                 target = null;
                 targetEnemy = null;
             }
@@ -72,15 +82,12 @@ public class Tower : MonoBehaviour
             }
 
             fireCD -= Time.deltaTime;
-
         }
     }
 
     void LockOn()
     {
         Vector2 dir = target.position - transform.position;
-        //Quaternion lookRotation = Quaternion.LookRotation(dir);
-        //Vector3 rotation = Quaternion.Lerp(this.transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         this.transform.right = dir;
     }
 
@@ -103,7 +110,6 @@ public class Tower : MonoBehaviour
             }
         }
     }
-
 
     void OnDrawGizmos()
     {

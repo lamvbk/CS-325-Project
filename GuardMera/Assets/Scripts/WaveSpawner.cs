@@ -5,6 +5,8 @@ using TMPro;
 public class WaveSpawner : MonoBehaviour
 {
     [SerializeField]
+
+    public float healthScalePerWave = 0.15f; // 15% more HP per wave
     public static int enemiesAlive = 0;
 
     public Wave[] waves;
@@ -56,7 +58,7 @@ public class WaveSpawner : MonoBehaviour
             {
                 for(int i = 0; i < eG.eCount; i++)
                 {    
-                    SpawnEnemy(eG.enemy);
+                    SpawnEnemy(eG.enemy, waveIndex);
                     yield return new WaitForSeconds(spawnTiming/eG.rate);
                 }
             }
@@ -77,9 +79,17 @@ public class WaveSpawner : MonoBehaviour
 
     }
 
-    void SpawnEnemy(GameObject enemy)
+    void SpawnEnemy(GameObject enemyPrefab, int currWaveIndex) // changed by mahad
     {
-        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        GameObject spawnedEnemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Enemy enemy = spawnedEnemy.GetComponent<Enemy>();
+        if(enemy != null)
+        {
+            float scaledHealth = enemy.maxHealth * (1f + currWaveIndex * healthScalePerWave);
+            enemy.maxHealth = Mathf.RoundToInt(scaledHealth);
+            enemy.currentHealth = enemy.maxHealth;
+        }
+        //Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
 
 }
