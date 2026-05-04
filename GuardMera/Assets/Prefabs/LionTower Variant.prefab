@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4797751251059157224, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
+      propertyPath: tname
+      value: Lion
+      objectReference: {fileID: 0}
     - target: {fileID: 6167065515448147938, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
       propertyPath: m_Name
       value: LionTower Variant

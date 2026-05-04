@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4797751251059157224, guid: 6a46fd2c5373c410aba1784941761468, type: 3}
+      propertyPath: tname
+      value: Hydra
+      objectReference: {fileID: 0}
     - target: {fileID: 5835615230080344423, guid: 6a46fd2c5373c410aba1784941761468, type: 3}
       propertyPath: m_Controller
       value: 
