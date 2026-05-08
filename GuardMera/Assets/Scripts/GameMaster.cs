@@ -1,8 +1,10 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
+    //public GameObject gameOverScreen;
     public static GameMaster instance;
     public TextMeshProUGUI healthCounterText;
     public TextMeshProUGUI moneyCounterText;
@@ -102,7 +104,7 @@ public class GameMaster : MonoBehaviour
 
     public void death()
     {
-        Debug.Log("YOU DIED");
+        SceneManager.LoadScene("GameOver");
     }
 
     public int GetFusionCost(string baseName, string addition)
