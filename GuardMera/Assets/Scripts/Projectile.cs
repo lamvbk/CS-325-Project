@@ -13,6 +13,8 @@ public class Projectile : MonoBehaviour
     [Header("Hit Settings")]
     public int damage = 50;
     public bool isSlowing;
+    public bool isExplosive;
+    public float explosionRadius = 2f;
 
     public GameObject impactFX;
 
@@ -97,9 +99,37 @@ public class Projectile : MonoBehaviour
         {
             Instantiate(impactFX, transform.position, transform.rotation);
         }
-
-        Damage(enemyHit);
+        if (isExplosive)
+        {
+            Explode(transform.position);
+        }
+        else
+        {
+            Damage(enemyHit);
+        }
         Destroy(gameObject);
+    }
+
+    void Explode (Vector3 point)
+    {
+        Collider2D[] objectsInRange = Physics2D.OverlapCircleAll(point, explosionRadius);
+        foreach (Collider2D col in objectsInRange)
+        {
+            Enemy e = col.GetComponent<Enemy>();
+            if (e != null)
+            {
+                e.TakeDamage(damage);
+            }
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        if (isExplosive)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, explosionRadius);
+        }
     }
 
 }

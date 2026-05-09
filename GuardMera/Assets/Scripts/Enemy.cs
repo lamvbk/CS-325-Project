@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        WaveSpawner.enemiesAlive--;
         GameMaster.instance.GainMoney(moneyValue);
         Destroy(gameObject);
     }

@@ -18,22 +18,42 @@ public class WaveSpawner : MonoBehaviour
     
     private int waveIndex = 0;
 
+    private bool hasWon = false;
+
     void Update()
     {
+        if (hasWon) return;
+        GameObject enemyFound = GameObject.FindWithTag("Enemy");
         if(enemiesAlive > 0)
         {
             return;
         }
 
-        if(countDown <= 0)
+        if (enemyFound != null)
         {
-            StartCoroutine(SpawnWave());
-            countDown = timeBetweenWaves;
             return;
         }
 
-        countDown -= Time.deltaTime;
+        if(waveIndex >= waves.Length)
+        {
+            hasWon = true;
+            WinGame();
+            return;
+        }
 
+        if(countDown <= 0)
+        {
+            if(waveIndex < waves.Length)
+            {
+                StartCoroutine(SpawnWave());
+                countDown = timeBetweenWaves;
+            }
+            
+        }
+        else
+        {
+            countDown -= Time.deltaTime;
+        }
         countDown = Mathf.Clamp(countDown, 0f, Mathf.Infinity);
     }
 
@@ -63,19 +83,11 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
-        while(enemiesAlive != 0)
+        while(enemiesAlive > 0)
         {
             yield return null;
         }
         waveIndex++;
-        if((waveIndex == waves.Length))
-        {
-            while(enemiesAlive != 0)
-            {
-                yield return null;
-            }
-            this.enabled = false;
-        }
 
     }
 
@@ -90,6 +102,12 @@ public class WaveSpawner : MonoBehaviour
             enemy.currentHealth = enemy.maxHealth;
         }
         //Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+    }
+
+    void WinGame()
+    {
+        Debug.Log("YOU WIN!");
+        this.enabled = false;
     }
 
 }

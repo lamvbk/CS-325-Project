@@ -28,6 +28,7 @@ public class GameMaster : MonoBehaviour
     public GameObject hydraPrefab;
     public GameObject griffinPrefab;
     public GameObject wyvernPrefab;
+    public GameObject phoneixPrefab;
     
 
     void Awake()
@@ -130,6 +131,7 @@ public class GameMaster : MonoBehaviour
         string recipe = baseName + "_" + addition;
         GameObject finalPrefab = null;
 
+        if (recipe == "Bird_Bird") finalPrefab = phoneixPrefab;
         if (recipe == "Snake_Snake") finalPrefab = hydraPrefab;
         if (recipe == "Bird_Lion" || recipe == "Lion_Bird" ) finalPrefab = griffinPrefab;
         if (recipe == "Bird_Snake" || recipe == "Snake_Bird") finalPrefab = wyvernPrefab;
