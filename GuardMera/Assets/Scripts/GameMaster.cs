@@ -30,6 +30,8 @@ public class GameMaster : MonoBehaviour
     public GameObject wyvernPrefab;
     public GameObject phoneixPrefab;
     
+//THIS IS FOR WINNING THE GAME
+    public GameObject winUI;
 
     void Awake()
     {
@@ -153,5 +155,16 @@ public class GameMaster : MonoBehaviour
         {
             Debug.Log("Invalid Recipe!");
         }
+    }
+    public void ShowWinScreen()
+    {
+        winUI.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }

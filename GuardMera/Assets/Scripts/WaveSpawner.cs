@@ -20,14 +20,16 @@ public class WaveSpawner : MonoBehaviour
 
     private bool hasWon = false;
 
+    void Awake()
+    {
+        enemiesAlive = 0;
+        Time.timeScale = 1f;
+    }
+
     void Update()
     {
         if (hasWon) return;
         GameObject enemyFound = GameObject.FindWithTag("Enemy");
-        if(enemiesAlive > 0)
-        {
-            return;
-        }
 
         if (enemyFound != null)
         {
@@ -83,7 +85,7 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
         }
-        while(enemiesAlive > 0)
+        while (GameObject.FindWithTag("Enemy") != null)
         {
             yield return null;
         }
@@ -107,6 +109,7 @@ public class WaveSpawner : MonoBehaviour
     void WinGame()
     {
         Debug.Log("YOU WIN!");
+        GameMaster.instance.ShowWinScreen();
         this.enabled = false;
     }
 
