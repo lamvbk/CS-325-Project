@@ -33,6 +33,14 @@ PrefabInstance:
       value: Lion
       objectReference: {fileID: 0}
     - target: {fileID: 4797751251059157224, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
+      propertyPath: isMelee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797751251059157224, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
+      propertyPath: meleePf
+      value: 
+      objectReference: {fileID: 4249330161930501391, guid: 6c19ea0483182124981b87b51614601a, type: 3}
+    - target: {fileID: 4797751251059157224, guid: 94a9d181438148f4192f2e6e984b22f4, type: 3}
       propertyPath: towerIcon
       value: 
       objectReference: {fileID: 5378747535079902793, guid: a20909c697415a142b5c9395fcd0c6f4, type: 3}

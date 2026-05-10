@@ -102,8 +102,16 @@ public class Tower : MonoBehaviour
         for (int i = 0; i < bulletCount; i++)
         {
             float currentAngle = startAngle + (i * angleStep);
-            GameObject projectileObject = (GameObject)Instantiate(projectilePf, firePoint.position, firePoint.rotation);
-            projectileObject.transform.Rotate(0,0,currentAngle);
+            GameObject projectileObject;
+            if(!isMelee)
+            {
+                projectileObject = (GameObject)Instantiate(projectilePf, firePoint.position, firePoint.rotation);
+                projectileObject.transform.Rotate(0,0,currentAngle);
+            }
+            else
+            {
+                projectileObject = (GameObject)Instantiate(meleePf, target.position, Quaternion.Euler(new Vector3(0f,0f,0f)));
+            }
             Projectile projectile = projectileObject.GetComponent<Projectile>();
             
             if(projectile != null)

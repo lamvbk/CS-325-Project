@@ -16,6 +16,13 @@ public class Projectile : MonoBehaviour
     public bool isExplosive;
     public float explosionRadius = 2f;
 
+    [Header("Melee Settings")]
+    public bool isMelee;
+    public Sprite chomp;
+    public Animator anim;
+    [SerializeField]
+    private float animTimer = 0.5f;
+
     public GameObject impactFX;
 
     void Start()
@@ -29,8 +36,15 @@ public class Projectile : MonoBehaviour
 
         if (!isHoming && target != null)
         {
-            fixedDirection = transform.right;
-            target = _target;
+            if(!isMelee)
+            {
+                fixedDirection = transform.right;
+                target = _target;
+            }
+            else
+            {
+                Melee();
+            }
         }
     }
 
@@ -55,7 +69,18 @@ public class Projectile : MonoBehaviour
         }
         else
         {
-            transform.Translate(fixedDirection *speed * Time.deltaTime, Space.World);
+            if(!isMelee)
+            {
+                transform.Translate(fixedDirection *speed * Time.deltaTime, Space.World);
+            }
+            else
+            {
+                animTimer -= Time.deltaTime;
+                if(animTimer <= 0)
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 
@@ -84,6 +109,11 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    private void Melee()
+    {
+        anim.SetTrigger("Chomp");
+        Damage(target);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
