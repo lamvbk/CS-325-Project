@@ -48,10 +48,8 @@ MonoBehaviour:
   isHoming: 1
   speed: 75
   lifeSpan: 5
-  damage: 25
+  damage: 50
   isSlowing: 0
-  isExplosive: 0
-  explosionRadius: 2
   impactFX: {fileID: 0}
 --- !u!1 &6876043860044610975
 GameObject:
