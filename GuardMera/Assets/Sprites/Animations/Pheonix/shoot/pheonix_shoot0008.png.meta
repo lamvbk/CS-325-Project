@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: ca13be22795e25a49be5155a52bfd24f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -50346073132934745
+    second: pheonix_shoot0008_0
+  - first:
+      213: -6372934877248170239
+    second: pheonix_shoot0008_1
+  - first:
+      213: -2176023157695160061
+    second: pheonix_shoot0008_2
+  - first:
+      213: 8704036288681807121
+    second: pheonix_shoot0008_3
+  - first:
+      213: -6421702626398054078
+    second: pheonix_shoot0008_4
+  - first:
+      213: 9137047316579906571
+    second: pheonix_shoot0008_5
+  - first:
+      213: -5527087502871610694
+    second: pheonix_shoot0008_6
+  - first:
+      213: 3491662138009660679
+    second: pheonix_shoot0008_7
+  - first:
+      213: 7344431807552295132
+    second: pheonix_shoot0008_8
+  - first:
+      213: -7639554564955550916
+    second: pheonix_shoot0008_9
+  - first:
+      213: 2068421576654927122
+    second: pheonix_shoot0008_10
+  - first:
+      213: 1812452685697043683
+    second: pheonix_shoot0008_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pheonix_shoot0008_0
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 626
+        width: 1209
+        height: 796
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a9531363822d4ff0800000000000000
+      internalID: -50346073132934745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9f68a5db7aed5b74a9cefe436632ed7c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pheonix_shoot0008_0: -50346073132934745
+      pheonix_shoot0008_1: -6372934877248170239
+      pheonix_shoot0008_10: 2068421576654927122
+      pheonix_shoot0008_11: 1812452685697043683
+      pheonix_shoot0008_2: -2176023157695160061
+      pheonix_shoot0008_3: 8704036288681807121
+      pheonix_shoot0008_4: -6421702626398054078
+      pheonix_shoot0008_5: 9137047316579906571
+      pheonix_shoot0008_6: -5527087502871610694
+      pheonix_shoot0008_7: 3491662138009660679
+      pheonix_shoot0008_8: 7344431807552295132
+      pheonix_shoot0008_9: -7639554564955550916
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

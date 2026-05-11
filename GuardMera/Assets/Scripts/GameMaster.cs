@@ -29,6 +29,7 @@ public class GameMaster : MonoBehaviour
     public GameObject griffinPrefab;
     public GameObject wyvernPrefab;
     public GameObject phoneixPrefab;
+    public GameObject cerberusPrefab;
     
 //THIS IS FOR WINNING THE GAME
     public GameObject winUI;
@@ -137,6 +138,7 @@ public class GameMaster : MonoBehaviour
         if (recipe == "Snake_Snake") finalPrefab = hydraPrefab;
         if (recipe == "Bird_Lion" || recipe == "Lion_Bird" ) finalPrefab = griffinPrefab;
         if (recipe == "Bird_Snake" || recipe == "Snake_Bird") finalPrefab = wyvernPrefab;
+        if (recipe == "Lion_Lion") finalPrefab = cerberusPrefab;
 
         if (finalPrefab != null)
         {

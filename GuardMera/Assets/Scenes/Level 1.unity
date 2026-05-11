@@ -23351,7 +23351,7 @@ MonoBehaviour:
   healthCounterText: {fileID: 785955736}
   moneyCounterText: {fileID: 939336215}
   health: 200
-  money: 300
+  money: 500
   selectedTowerPrefab: {fileID: 0}
   selectedTowerCost: 0
   shopMenu: {fileID: 1897621563}
@@ -23364,6 +23364,7 @@ MonoBehaviour:
   griffinPrefab: {fileID: 6394772186967499, guid: f6c3078bc2576444cba0acfdb5e24d01, type: 3}
   wyvernPrefab: {fileID: 652958925578187526, guid: 13e91222976cc4288a4a5e72977e1327, type: 3}
   phoneixPrefab: {fileID: 652958925578187526, guid: 1c88e35110cce4c719d3225836223641, type: 3}
+  cerberusPrefab: {fileID: 8184646317101291550, guid: 45a0e810eac2450469d3e61a51c22a87, type: 3}
   winUI: {fileID: 540311936}
 --- !u!4 &1851458767
 Transform:
