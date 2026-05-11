@@ -164,7 +164,10 @@ MonoBehaviour:
   lifeSpan: 5
   damage: 50
   isSlowing: 0
+  isExplosive: 0
+  explosionRadius: 2
   isMelee: 1
   chomp: {fileID: 7236436871394504406, guid: 604fec6573e926b46a67cf9d1a1c6f63, type: 3}
   anim: {fileID: 1512778377548585321}
+  animTimer: 0.5
   impactFX: {fileID: 0}

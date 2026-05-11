@@ -61,7 +61,14 @@ public class Tower : MonoBehaviour
             if (nearestEnemy != null && sDistance <= range)
             {
                 target = nearestEnemy.transform;
-                targetEnemy = nearestEnemy.GetComponent<Enemy>();
+                targetEnemy = nearestEnemy.GetComponentInParent<Enemy>();
+
+                if(targetEnemy == null) {
+                    targetEnemy = nearestEnemy.GetComponentInChildren<Enemy>();
+                }
+                if(targetEnemy == null) {
+                    Debug.LogWarning($"Tower found {nearestEnemy.name} by tag, but could not find Enemy script!");
+                }
             }
             else
             {
@@ -116,7 +123,14 @@ public class Tower : MonoBehaviour
             
             if(projectile != null)
             {
-                projectile.Seek(target);
+                if(!isMelee)
+                {
+                    projectile.Seek(target);
+                }
+                else
+                {
+                    projectile.Melee(target, targetEnemy);
+                }
             }
         }
     }

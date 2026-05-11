@@ -19,6 +19,7 @@ public class Projectile : MonoBehaviour
     [Header("Melee Settings")]
     public bool isMelee;
     public Sprite chomp;
+    private Enemy targetToHit;
     public Animator anim;
     [SerializeField]
     private float animTimer = 0.5f;
@@ -36,15 +37,11 @@ public class Projectile : MonoBehaviour
 
         if (!isHoming && target != null)
         {
-            if(!isMelee)
-            {
                 fixedDirection = transform.right;
                 target = _target;
             }
-            else
-            {
-                Melee();
-            }
+            fixedDirection = transform.right;
+            target = _target;
         }
     }
 
@@ -104,12 +101,33 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void Melee()
+    public void Melee(Transform _target, Enemy _enemy)
     {
-        anim.SetTrigger("Chomp");
-        Damage(target);
-    }
+        // 1. Log that the function was reached
+        Debug.Log($"[MELEE] Melee function called for: {gameObject.name}");
 
+        if (anim != null) 
+        {
+            anim.SetTrigger("Chomp");
+        }
+        else 
+        {
+            Debug.LogWarning($"[MELEE] Animator is MISSING on {gameObject.name} in build!");
+        }
+
+        targetToHit = _enemy; 
+
+        // 2. Immediate Check: Is the enemy reference valid?
+        if (targetToHit != null)
+        {
+            Debug.Log($"[MELEE] Applying {damage} damage to {targetToHit.name}");
+            targetToHit.TakeDamage(damage);
+        }
+        else
+        {
+            Debug.LogError("[MELEE] targetToHit is NULL! Tower passed a dead or missing reference.");
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
