@@ -60,11 +60,6 @@ public class Projectile : MonoBehaviour
             }
             Vector3 dir = target.position - transform.position;
             float distanceThisFrame = speed * Time.deltaTime;
-            if(dir.magnitude <= distanceThisFrame)
-            {
-                HitTarget();
-                return;
-            }
             transform.Translate(dir.normalized * distanceThisFrame, Space.World);
         }
         else
