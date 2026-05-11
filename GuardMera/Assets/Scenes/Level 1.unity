@@ -21277,8 +21277,8 @@ MonoBehaviour:
       rate: 4
       resistChance: 0
       delay: 0
-    - enemy: {fileID: 2759811041231053065, guid: 22ed49d0710c6b0419c0affc4ac27923, type: 3}
-      eCount: 32
+    - enemy: {fileID: 1684690413322748963, guid: a8de570ee8d86534f81478153133b410, type: 3}
+      eCount: 10
       rate: 4
       resistChance: 0
       delay: 0
@@ -21295,8 +21295,8 @@ MonoBehaviour:
       rate: 5
       resistChance: 0
       delay: 0
-    - enemy: {fileID: 2759811041231053065, guid: 22ed49d0710c6b0419c0affc4ac27923, type: 3}
-      eCount: 40
+    - enemy: {fileID: 1684690413322748963, guid: a8de570ee8d86534f81478153133b410, type: 3}
+      eCount: 15
       rate: 5
       resistChance: 0
       delay: 0
@@ -21318,8 +21318,13 @@ MonoBehaviour:
       rate: 6
       resistChance: 0
       delay: 0
+    - enemy: {fileID: 1684690413322748963, guid: a8de570ee8d86534f81478153133b410, type: 3}
+      eCount: 25
+      rate: 6
+      resistChance: 0
+      delay: 0
     - enemy: {fileID: 2759811041231053065, guid: 22ed49d0710c6b0419c0affc4ac27923, type: 3}
-      eCount: 55
+      eCount: 70
       rate: 6
       resistChance: 0
       delay: 0
@@ -23351,7 +23356,7 @@ MonoBehaviour:
   healthCounterText: {fileID: 785955736}
   moneyCounterText: {fileID: 939336215}
   health: 200
-  money: 500
+  money: 300
   selectedTowerPrefab: {fileID: 0}
   selectedTowerCost: 0
   shopMenu: {fileID: 1897621563}
