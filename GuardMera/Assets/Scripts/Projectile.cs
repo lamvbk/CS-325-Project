@@ -39,7 +39,7 @@ public class Projectile : MonoBehaviour
         {
                 fixedDirection = transform.right;
                 target = _target;
-            }
+            
             fixedDirection = transform.right;
             target = _target;
         }
@@ -174,7 +174,5 @@ public class Projectile : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position, explosionRadius);
         }
     }
-
 }
-
 
